@@ -80,7 +80,7 @@ function runEnter() {
             my_cell.text(v);
         });
     });
-
+/************************************************************/
     //Get the State Data 
     var filteredStateData = tableData.filter(inputState => inputState.state === inputValue);
     console.log(filteredStateData);
@@ -94,6 +94,21 @@ function runEnter() {
             my_cell.text(v);
         });
     });
+/************************************************************/
+    //Get the Country Data 
+    var filteredCountryData = tableData.filter(inputCountry => inputCountry.country === inputValue);
+    console.log(filteredCountryData);
+
+    filteredCountryData.forEach(function(myRow) {
+        //console.log(myRow);
+        var t_row = myTableBody.append("tr");
+        Object.entries(myRow).forEach(function([k, v]) {
+            //console.log(k, v);
+            var my_cell = t_row.append("td");
+            my_cell.text(v);
+        });
+    });
+
 
 };
 
