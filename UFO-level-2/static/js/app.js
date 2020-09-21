@@ -108,6 +108,20 @@ function runEnter() {
             my_cell.text(v);
         });
     });
+/************************************************************/
+    //Get the Shape Data 
+    var filteredShapeData = tableData.filter(inputShape => inputShape.shape === inputValue);
+    console.log(filteredShapeData);
+
+    filteredShapeData.forEach(function(myRow) {
+        //console.log(myRow);
+        var t_row = myTableBody.append("tr");
+        Object.entries(myRow).forEach(function([k, v]) {
+            //console.log(k, v);
+            var my_cell = t_row.append("td");
+            my_cell.text(v);
+        });
+    });
 
 
 };
